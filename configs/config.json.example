@@ -1,0 +1,94 @@
+{
+  "gifts": [
+    {
+      "id": 1,
+      "category": "A",
+      "display": "Gift 1",
+      "stocks": 9,
+      "chance": 0.05,
+      "img": "/imgs/gift.png",
+      "mode": "TEEN"
+    },
+    {
+      "id": 2,
+      "category": "B",
+      "display": "Gift 2",
+      "stocks": 9,
+      "chance": 0.85,
+      "img": "/imgs/gift.png",
+      "mode": "TEEN"
+    },
+    {
+      "id": 3,
+      "category": "B",
+      "display": "Gift 3",
+      "stocks": 9,
+      "chance": 0.85,
+      "img": "/imgs/gift.png",
+      "mode": "TEEN"
+    },
+    {
+      "id": 4,
+      "category": "C",
+      "display": "Gift 4",
+      "stocks": 9,
+      "chance": 0.05,
+      "img": "/imgs/gift.png",
+      "mode": "TEEN"
+    },
+    {
+      "id": 5,
+      "category": "C",
+      "display": "Gift 5",
+      "stocks": 9,
+      "chance": 0.05,
+      "img": "/imgs/gift.png",
+      "mode": "TEEN"
+    },
+    {
+      "id": 7,
+      "category": "C",
+      "display": "Gift 1",
+      "stocks": 9,
+      "chance": 0.05,
+      "img": "/imgs/gift.png",
+      "mode": "KID"
+    },
+    {
+      "id": 8,
+      "category": "C",
+      "display": "Gift 2",
+      "stocks": 9,
+      "chance": 0.05,
+      "img": "/imgs/gift.png",
+      "mode": "KID"
+    },
+    {
+      "id": 9,
+      "category": "C",
+      "display": "Gift 3",
+      "stocks": 9,
+      "chance": 0.05,
+      "img": "/imgs/gift.png",
+      "mode": "KID"
+    },
+    {
+      "id": 10,
+      "category": "C",
+      "display": "Gift 4",
+      "stocks": 9,
+      "chance": 0.05,
+      "img": "/imgs/gift.png",
+      "mode": "KID"
+    },
+    {
+      "id": 11,
+      "category": "C",
+      "display": "Gift 5",
+      "stocks": 9,
+      "chance": 0.05,
+      "img": "/imgs/gift.png",
+      "mode": "KID"
+    }
+  ]
+}

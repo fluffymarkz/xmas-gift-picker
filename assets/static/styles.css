@@ -1,0 +1,619 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #1a4c6e, #2d2d4d);
+    color: white;
+    font-family: 'Navidad', cursive;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.christmas-container {
+    text-align: center;
+    position: relative;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-items: center;
+    align-self: center;
+    grid-auto-rows: minmax(250px, auto);
+    width: 80vw;
+}
+
+.card {
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 300px;
+    position: relative;
+
+}
+
+.card .chance {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: green;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.card img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card span {
+    font-size: 2.25rem;
+    text-align: center;
+    color: black;
+    font-family: 'Navidad', cursive;
+
+}
+
+.wheel-container {
+    position: relative;
+    width: 80vw;
+    max-width: 600px;
+    height: 80vw;
+    max-height: 600px;
+    margin-bottom: 50px;
+}
+
+#wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid #ffd700;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
+    transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.wheel-section {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 0px 5px #000;
+}
+
+.wheel-section:nth-child(1) {
+    background: #ff4d4d;
+}
+
+.wheel-section:nth-child(2) {
+    background: #4dff4d;
+    transform: rotate(90deg);
+}
+
+.wheel-section:nth-child(3) {
+    background: #4d4dff;
+    transform: rotate(180deg);
+}
+
+.wheel-section:nth-child(4) {
+    background: #ffff4d;
+    transform: rotate(270deg);
+}
+
+.wheel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: skewY(90deg) rotate(-90deg);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.wheel-content img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.wheel-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.wheel-label {
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.pointer {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid red;
+    z-index: 10;
+}
+
+.spin-button {
+    background: #ffd700;
+    color: black;
+    border: none;
+    padding: 22.5px 45px;
+    border-radius: 37.5px;
+    font-size: 2.25rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px #ffd700;
+    transition: transform 0.2s;
+    margin-top: 30px;
+    font-family: 'Navidad', cursive;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spin-button:hover {
+    transform: scale(1.1);
+}
+
+#santa-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+#santa {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    display: none;
+    transition: transform 0.5s linear;
+
+}
+
+#fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflake {
+    position: fixed;
+    color: #fff;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s;
+    animation-delay: -2s;
+}
+
+.snowflake:nth-child(2) {
+    left: 30%;
+    animation-duration: 8s;
+    animation-delay: -4s;
+}
+
+.snowflake:nth-child(3) {
+    left: 50%;
+    animation-duration: 12s;
+    animation-delay: -6s;
+}
+
+.snowflake:nth-child(4) {
+    left: 70%;
+    animation-duration: 9s;
+    animation-delay: -8s;
+}
+
+.snowflake:nth-child(5) {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: -10s;
+}
+
+.snowflake:nth-child(6) {
+    left: 20%;
+    animation-duration: 10s;
+    animation-delay: -3s;
+}
+
+.snowflake:nth-child(7) {
+    left: 40%;
+    animation-duration: 8s;
+    animation-delay: -5s;
+}
+
+.snowflake:nth-child(8) {
+    left: 60%;
+    animation-duration: 12s;
+    animation-delay: -7s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinning {
+    animation: spin 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.card.highlight {
+    border: 4px solid #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.reindeer-animation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    animation: run 3s linear infinite;
+}
+
+@keyframes run {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: url('imgs/modal_bg.jpg') no-repeat center center;
+    background-size: cover;
+    margin: 7% auto;
+    padding: 5px 20px;
+    border: 1px solid #888;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-img {
+    width: 70%;
+    height: auto;
+    max-height: 60%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#modal-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#modal-title {
+    font-size: 4.5rem;
+    text-align: center;
+    color: black;
+    font-family: 'Navidad', cursive;
+
+}
+
+.modal-button {
+    background: #ffd700;
+    color: black;
+    border: none;
+    padding: 22.5px 45px;
+    border-radius: 37.5px;
+    font-size: 2.25rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px #ffd700;
+    transition: transform 0.2s;
+    margin-top: 30px;
+    font-family: 'Navidad', cursive;
+
+}
+
+.modal-button:hover {
+    transform: scale(1.1);
+}
+
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+    gap: 20px;
+}
+
+#levelSlider {
+    margin: 0 90px;
+    transform: scale(2.5);
+}
+
+#levelDescription {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.controls label {
+    font-size: 3rem;
+}
+
+.arrow-button {
+    background: none;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    color: #ffd700;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.arrow-button:hover {
+    transform: scale(1.1);
+}
+
+
+#modeModal .modal-content h2 {
+    font-size: 4rem;
+    text-align: center;
+    color: black;
+    font-family: 'Navidad', cursive;
+}
+
+#modeModal .modal-button {
+    font-size: 4rem;
+    padding: 20px 40px;
+    margin: 20px;
+
+}
+
+#modeModal .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#modeModal .button-container {
+    display: flex;
+    gap: 20px;
+}
+
+
+#background-decorations {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+#xmastree {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 292.5px;
+    height: auto;
+}
+
+#elf1 {
+    position: absolute;
+    bottom: 0;
+    left: 270px;
+    width: 150px;
+    height: auto;
+}
+
+#snowman {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 195px;
+    height: auto;
+}
+
+#small-snowman {
+    position: absolute;
+    bottom: 0;
+    right: 215px;
+    width: 128.7px;
+    height: auto;
+}
+
+
+#roaming-cats {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cat {
+    position: absolute;
+    opacity: 0.6;
+    width: 165px;
+    max-width: 300px;
+    height: auto;
+    transition: transform 5s linear, opacity 1s ease-in-out;
+}
+
+
+#sliding-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.sliding {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: auto;
+    transition: transform 1s linear;
+}
+
+@keyframes slide-left-to-right {
+    0% {
+        left: -200px;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        left: 100vw;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes slide-right-to-left {
+    0% {
+        left: 100vw;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        left: -200px;
+        transform: rotate(0deg);
+    }
+}
+
+.hidden {
+    display: none;
+}

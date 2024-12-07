@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmas gift picker v0.1</title>
+    <link rel="icon" type="image/png" href="/imgs/santahat.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="christmas-container">
+        <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+        </div>
+
+        <div class="grid-container" id="grid-container"></div>
+
+        <div class="controls">
+            <button id="decreaseLevel" class="arrow-button">&#9664;</button>
+            <button id="increaseLevel" class="arrow-button">&#9654;</button>
+            <label for="levelSlider">Increase my chances!</label>
+            <input type="range" id="levelSlider" min="1" max="5" value="3">
+            <span id="levelDescription">Balanced</span>
+            <img id="levelImage" src="imgs/balanced.png" alt="Level Image" style="height: 170px; margin-left: 20px;">
+        </div>
+
+        <button class="spin-button" id="spinButton">LET'S GO!</button>
+    </div>
+
+    <div id="santa-container">
+        <img src="imgs/santa.gif" id="santa" alt="Santa">
+    </div>
+
+    <div id="fireworks-container"></div>
+
+    <!-- Sliding Image -->
+    <div id="sliding-container">
+        <img src="imgs/sliding.gif" id="sliding" class="sliding" alt="Sliding Image">
+    </div>
+
+    <!-- Background Decorations -->
+    <div id="background-decorations">
+        <img src="imgs/xmastree.gif" id="xmastree" alt="Christmas Tree">
+        <img src="imgs/elf1.gif" id="elf1" alt="Elf">
+        <img src="imgs/snowman.gif" id="snowman" alt="Snowman">
+        <img src="imgs/snowman.gif" id="small-snowman" alt="Small Snowman">
+    </div>
+
+    <!-- Roaming Cats -->
+    <div id="roaming-cats">
+        <img src="imgs/cat1.gif" class="cat" alt="Cat 1">
+        <img src="imgs/cat2.gif" class="cat" alt="Cat 2">
+        <img src="imgs/cat3.gif" class="cat" alt="Cat 3">
+        <img src="imgs/cat4.gif" class="cat" alt="Cat 4">
+        <img src="imgs/cat5.gif" class="cat" alt="Cat 5">
+    </div>
+
+    <!-- Mode Selection Modal -->
+    <div id="modeModal" class="modal">
+        <div class="modal-content">
+            <button id="connectButton" class="modal-button"
+                style="position: absolute; top: 10px; left: 10px; background-color: gray; font-size: 2rem; padding: 10px 20px;">Connect
+                to BT</button>
+            <h2>Mode?</h2>
+            <div class="button-container">
+                <button id="kidButton" class="modal-button">KID</button>
+                <button id="teenButton" class="modal-button">TEEN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gift Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="modal-close" class="modal-close">&times;</span>
+            <img id="modal-img" src="" alt="Gift Image">
+            <h2 id="modal-title"></h2>
+            <button id="modal-button" class="modal-button">Merry Christmas!</button>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" src="/music/bg.mp3"></audio>
+    <!-- Button Click Sound -->
+    <audio id="button-click-sound" src="/music/buttonclick.mp3"></audio>
+    <!-- Drumroll Sound -->
+    <audio id="drumroll-sound" src="/music/drumroll.mp3"></audio>
+    <!-- Tada Sound -->
+    <audio id="tada-sound" src="/music/tada.mp3"></audio>
+
+</body>
+
+</html>
