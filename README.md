@@ -46,8 +46,11 @@ ESP32 Integration (Optional) 🤖
 Demo Videos 📹
 ------------
 Check out how it works:
-- [Default Demo Video](docs/videos/default-demo.mp4)
-- [ESP32 Controller Demo](docs/videos/esp32-demo.mp4)
+- Default Mode Demo:
+https://github.com/user-attachments/assets/63cc1ad4-bb88-4763-98b9-ca068738d3f6
+
+- ESP32 Controller Demo:
+https://github.com/user-attachments/assets/d98be2c5-1d78-4193-bd89-a98dd0a41e06
 
 ESP32 Schematics 📝
 -----------------
