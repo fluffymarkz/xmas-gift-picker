@@ -47,10 +47,22 @@ Demo Videos 📹
 ------------
 Check out how it works:
 - Default Mode Demo:
-https://github.com/user-attachments/assets/63cc1ad4-bb88-4763-98b9-ca068738d3f6
+
+
+https://github.com/user-attachments/assets/6a17bc9f-7452-472c-9ede-6b23c3a2625f
+
+
 
 - ESP32 Controller Demo:
-https://github.com/user-attachments/assets/d98be2c5-1d78-4193-bd89-a98dd0a41e06
+
+
+
+
+https://github.com/user-attachments/assets/d19e80b6-7be8-4237-90fc-ce69803ee1aa
+
+
+
+
 
 ESP32 Schematics 📝
 -----------------
